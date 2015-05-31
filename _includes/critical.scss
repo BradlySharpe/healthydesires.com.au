@@ -3,3 +3,32 @@
 @import
   "settings"
 ;
+
+.header,
+.footer {
+	background: $primary-color;
+}
+
+.logo {
+	width: 162px;
+	height: 100px;
+	float: left;
+}
+
+.logo {
+	object,
+	img {
+		width: 100%;
+		padding: 10px 0;
+	}
+}
+
+.navigation {
+	float: right;
+	background: $secondary-color;
+	color: #fff;
+	line-height: 100px;
+	padding: 0 30px;
+	font-family: $title-font-family; 
+	font-size: 1.25em;
+}
