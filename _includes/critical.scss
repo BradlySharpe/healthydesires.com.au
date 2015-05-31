@@ -281,20 +281,21 @@ hr {
 	overflow:hidden;
 
 	+ .menuItems {
-		height: 10px;
+		height: 0;
 		overflow: hidden;
 		@include transition(height 500ms);
 	}
 
 	&:checked + .menuItems {
 		height: 318px;
+		padding-bottom: 10px;
 	}
 }
 
 .menuItems {
 	background: $secondary-color;
 	font-family: $title-font-family; 
-	padding: 10px 0;
+	padding-top: 10px;
 
 	ul {
 		margin: 0;
