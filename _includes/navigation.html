@@ -10,17 +10,17 @@
 				<div class="navigation">
 					<label for="menuState">Menu</label>
 				</div>
-				<input type="checkbox" class="menuState" name="menuState" id="menuState">
-				<div class="menuItems">
-					<ul>
-				  {% for link in site.data.navigation %}
-				    <li class="menuItem">
-				      <a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %} title="{{ link.title }}">{{ link.title }}</a>
-				    </li>
-				  {% endfor %}
-				  </ul>
-				</div>
 			</div>
 		</div>
+	</div>
+	<input type="checkbox" class="menuState" name="menuState" id="menuState">
+	<div class="menuItems">
+		<ul>
+	  {% for link in site.data.navigation %}
+	    <li class="menuItem">
+	      <a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %} title="{{ link.title }}">{{ link.title }}</a>
+	    </li>
+	  {% endfor %}
+	  </ul>
 	</div>
 </div>
