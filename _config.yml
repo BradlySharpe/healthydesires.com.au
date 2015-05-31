@@ -28,7 +28,7 @@ business:
   state: "VIC"
   postCode: "3280"
   city: "Warrnambool"
-  address: "3 Pappas Drive" # 68 Donovans Road
+  address: "3 Pappas Drive"
   internationalNumber: ""
   localNumber: ""
   logo: "healthy-desires-logo.png"
