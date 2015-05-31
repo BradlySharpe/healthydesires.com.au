@@ -48,7 +48,7 @@
         console.log("Loading: " + key);
         if (BSStyleSheets._localStorageSupported()) {
           if (localStorage[key] && ("" != localStorage[key])) {
-            if (localStorage[key+"_stored"] && ("" != localStorage[key]) && ("true" != localStorage["debug"])) {
+            if (localStorage[key+"_stored"] && ("" != localStorage[key]) && ("true" != localStorage["_fresh"])) {
               try {
                 var stored = new Date(localStorage[key+"_stored"]);
                 if ((BSStyleSheets._getToday() - stored) < 1) {
@@ -75,7 +75,7 @@
     }
   };
   if ((!BSStyleSheets._localStorageSupported()) || 
-      (BSStyleSheets._localStorageSupported() && ("true" != localStorage["nostyles"]))) {
+      (BSStyleSheets._localStorageSupported() && ("true" != localStorage["_nostyles"]))) {
     BSStyleSheets.appendStyles();
   }
   var resetStyles = function() { try { localStorage.clear(); window.location.reload(); } catch (e) {} }
