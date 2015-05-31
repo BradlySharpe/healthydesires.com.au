@@ -305,7 +305,6 @@ hr {
 .menuItem {
 	margin: 0;
 	width: 100%;
-	padding: 0.25rem;
 
 	a {
 		display: block;
@@ -313,6 +312,7 @@ hr {
 		text-align: center;
 		text-decoration: none;
 		font-size: 1.75rem;
+		padding: 0.25rem 0;
 		@include transition(background 500ms);
 
 		&:hover {
