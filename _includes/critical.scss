@@ -287,15 +287,13 @@ hr {
 	}
 
 	&:checked + .menuItems {
-		height: 318px;
-		padding-bottom: 10px;
+		height: 198px;
 	}
 }
 
 .menuItems {
-	background: $secondary-color;
-	font-family: $title-font-family; 
-	padding-top: 10px;
+	background: $primary-color;
+	font-family: $title-font-family;
 
 	ul {
 		margin: 0;
@@ -315,5 +313,10 @@ hr {
 		text-align: center;
 		text-decoration: none;
 		font-size: 1.75rem;
+		@include transition(background 500ms);
+
+		&:hover {
+			background: $secondary-color;
+		}
 	}
 }
