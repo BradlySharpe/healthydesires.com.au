@@ -281,11 +281,13 @@ hr {
 	overflow:hidden;
 
 	+ .menuItems {
-
+		height: 10px;
+		overflow: hidden;
+		@include transition(height 500ms);
 	}
 
 	&:checked + .menuItems {
-
+		height: 318px;
 	}
 }
 
