@@ -275,9 +275,29 @@ hr {
 	border:0;
 	clip:rect(0 0 0 0);
 	overflow:hidden;
+
+	+ .menuItems {
+
+	}
+
+	&:checked + .menuItems {
+
+	}
 }
 
 .menuItems {
 	background: $secondary-color;
 	font-family: $title-font-family; 
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+}
+
+.menuItem {
+	margin: 0;
+	display: block;
+	width: 100%;
 }
