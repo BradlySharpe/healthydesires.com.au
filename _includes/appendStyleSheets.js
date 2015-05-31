@@ -75,7 +75,7 @@
     }
   };
   if ((!BSStyleSheets._localStorageSupported()) || 
-      (BSStyleSheets._localStorageSupported() && ("true" != localStorage["nostyles"])) {
+      (BSStyleSheets._localStorageSupported() && ("true" != localStorage["nostyles"]))) {
     BSStyleSheets.appendStyles();
   }
   var resetStyles = function() { try { localStorage.clear(); window.location.reload(); } catch (e) {} }
