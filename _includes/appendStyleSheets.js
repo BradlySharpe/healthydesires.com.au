@@ -1,7 +1,7 @@
 <script type="text/javascript">
 	var BSStyleSheets = {
     stored: "_stored",
-	  raleway: "{{ "/css/raleway.css" | prepend: site.assets_url }}",
+	  font: "{{ "/css/klill.css" | prepend: site.assets_url }}",
     style: "{{ "/css/style.css" | prepend: site.assets_url }}",
   {% if page.btf != nil %} 
   {% assign stylesheetName = page.btf | prepend: "/css/" %}
@@ -71,9 +71,12 @@
       }, 0);
     },
     appendStyles: function() {
-      this._load("raleway", this.raleway), this._load("style", this.style){% if page.btf != nil %}, this._load(this.styleBTFKey, this.styleBTF){% endif %}
+      this._load("font", this.font), this._load("style", this.style){% if page.btf != nil %}, this._load(this.styleBTFKey, this.styleBTF){% endif %}
     }
   };
-  BSStyleSheets.appendStyles();
+  if ((!BSStyleSheets._localStorageSupported()) || 
+      (BSStyleSheets._localStorageSupported() && ("true" != localStorage["nostyles"])) {
+    BSStyleSheets.appendStyles();
+  }
   var resetStyles = function() { try { localStorage.clear(); window.location.reload(); } catch (e) {} }
 </script>
