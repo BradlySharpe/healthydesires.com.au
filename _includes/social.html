@@ -1,0 +1,23 @@
+<!-- Open Graph -->
+<meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}" />
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:type" content="{% if page.openGraphType %}{{ page.openGraphType }}{% else %}website{% endif %}" />
+<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+{% if page.featuredImage %}
+<meta property="og:image" content="{{ site.images_url }}{{ page.featuredImage }}" />
+{% elsif site.business.logo and site.business.logo != "" %}
+<meta property="og:image" content="{{ site.business.logo | prepend: site.baseurl | prepend: site.url }}" />
+{% endif %}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="{% if page.featuredImage %}summary_large_image{% else %}summary{% endif %}" />
+<meta name="twitter:site" content="@{{ site.twitterName }}" />
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}" />
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+<meta name="twitter:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+{% if page.featuredImage %}
+<meta name="twitter:image" content="{{ site.images_url }}{{ page.featuredImage }}" />
+{% elsif site.business.logo and site.business.logo != "" %}
+<meta name="twitter:image" content="{{ site.business.logo | prepend: site.baseurl | prepend: site.url }}" />
+{% endif %}
