@@ -1,14 +1,26 @@
-<div class="container">
-	<div class="row">
-		<div class="twelve columns">
-
+<div class="header">
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				<div class="logo">
+					<object type="image/svg+xml" data="{{ site.images_url }}healthy-desires-logo-face.svg">
+            <img src="{{ site.images_url }}healthy-desires-logo-face.png" alt="Healthy Desires Logo" title="Healthy Desires Logo">
+          </object>
+				</div>
+				<div class="navigation">
+					<label for="menuState">Menu</label>
+				</div>
+				<input type="checkbox" class="menuState" name="menuState" id="menuState">
+				<div class="menuItems">
+					<ul>
+				  {% for link in site.data.navigation %}
+				    <li class="menuItem">
+				      <a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %} title="{{ link.title }}">{{ link.title }}</a>
+				    </li>
+				  {% endfor %}
+				  </ul>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
-<div class="navigation">
-
-</div>
-<div class="searchDropdown">
-
-</div>
-<h1 class="title">{% if page.title and page.title != "" %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
