@@ -32,3 +32,19 @@
 	font-family: $title-font-family; 
 	font-size: 1.25em;
 }
+
+.menuState {
+	position:absolute;
+	width:1px;
+	height:1px;
+	padding:0;
+	margin:-1px;
+	border:0;
+	clip:rect(0 0 0 0);
+	overflow:hidden;
+}
+
+.menuItems {
+	background: $secondary-color;
+	font-family: $title-font-family; 
+}
