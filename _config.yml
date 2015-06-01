@@ -10,7 +10,7 @@ baseurl: ""
 
 # URL Settings
 #   DEVELOPMENT
-url: "http://dev.healthydesires.com.au"
+url: "http://dev.healthydesires.com.au/"
 images_url: "/images/"
 assets_url: ""
 #   PRODUCTION
