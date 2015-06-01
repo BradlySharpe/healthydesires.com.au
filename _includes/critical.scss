@@ -267,9 +267,13 @@ hr {
 	background: $secondary-color;
 	color: #fff;
 	line-height: 100px;
-	padding: 0 30px;
 	font-family: $title-font-family; 
 	font-size: 1.25em;
+
+  label {
+    display: block;
+    padding: 0 30px;
+  }
 }
 
 .menuState {
