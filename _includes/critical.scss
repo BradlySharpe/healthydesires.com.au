@@ -365,6 +365,7 @@ $header-height: 100px;
     @include mq($bp-larger-than-phablet) {
       line-height: $header-height;
       padding: 0 10px;
+      display: inline-block;
     }
 	}
 
