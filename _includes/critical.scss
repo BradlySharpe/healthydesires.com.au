@@ -274,7 +274,7 @@ $header-height: 100px;
   width: 100%;
   max-width: 100%;
 
-  @include mq($bp-larger-than-phablet) {
+  @include mq($bp-larger-than-tablet) {
     width: 100%;
     max-width: $container-max-width;
     margin: 0 auto;
@@ -297,7 +297,7 @@ $header-height: 100px;
     padding: 0 30px;
   }
 
-  @include mq($bp-larger-than-phablet) {
+  @include mq($bp-larger-than-tablet) {
     display: none;
   }
 }
@@ -322,7 +322,7 @@ $header-height: 100px;
 		height: 198px;
 	}
 
-  @include mq($bp-larger-than-phablet) {
+  @include mq($bp-larger-than-tablet) {
     + .menuItems,
     &:checked + .menuItems {
       height: $header-height;
@@ -340,7 +340,7 @@ $header-height: 100px;
 		list-style: none;
 	}
 
-  @include mq($bp-larger-than-phablet) {
+  @include mq($bp-larger-than-tablet) {
     height: $header-height;
   }
 }
@@ -362,14 +362,14 @@ $header-height: 100px;
 			background: $secondary-color;
 		}
 
-    @include mq($bp-larger-than-phablet) {
+    @include mq($bp-larger-than-tablet) {
       line-height: $header-height;
       padding: 0 10px;
       display: inline-block;
     }
 	}
 
-  @include mq($bp-larger-than-phablet) {
+  @include mq($bp-larger-than-tablet) {
     display: inline;
   }
 }
