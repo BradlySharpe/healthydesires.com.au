@@ -239,18 +239,24 @@ hr {
 // Site Customisation
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
+$header-height: 100px;
+
 .header,
 .footer {
 	background: $primary-color;
 }
 
-.header .container {
-	padding: 0 0 0 10px;
+.header {
+  height: $header-height;
+  
+  .container {
+    padding: 0 0 0 10px;
+  }
 }
 
 .logo {
 	width: 162px;
-	height: 100px;
+	height: $header-height;
 	float: left;
 }
 
@@ -262,17 +268,37 @@ hr {
 	}
 }
 
+.container.menu {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+
+  @include mq($bp-larger-than-phablet) {
+    width: 100%;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    top: -$header-height;
+  }
+}
+
 .navigation {
 	float: right;
 	background: $secondary-color;
 	color: #fff;
-	line-height: 100px;
+	line-height: $header-height;
 	font-family: $title-font-family; 
 	font-size: 1.25em;
 
   label {
     display: block;
     padding: 0 30px;
+  }
+
+  @include mq($bp-larger-than-phablet) {
+    display: none;
   }
 }
 
@@ -295,6 +321,13 @@ hr {
 	&:checked + .menuItems {
 		height: 198px;
 	}
+
+  @include mq($bp-larger-than-phablet) {
+    + .menuItems,
+    &:checked + .menuItems {
+      height: $header-height;
+    }
+  }
 }
 
 .menuItems {
@@ -306,6 +339,10 @@ hr {
 		padding: 0;
 		list-style: none;
 	}
+
+  @include mq($bp-larger-than-phablet) {
+    height: $header-height;
+  }
 }
 
 .menuItem {
@@ -324,7 +361,16 @@ hr {
 		&:hover {
 			background: $secondary-color;
 		}
+
+    @include mq($bp-larger-than-phablet) {
+      line-height: $header-height;
+      padding: 0 10px;
+    }
 	}
+
+  @include mq($bp-larger-than-phablet) {
+    display: inline;
+  }
 }
 
 .footer {
