@@ -247,7 +247,9 @@ $header-height: 100px;
 }
 
 .header {
-  height: $header-height;
+  @include mq($bp-larger-than-tablet) {
+    height: $header-height;
+  }
   
   .container {
     padding: 0 0 0 10px;
@@ -342,6 +344,7 @@ $header-height: 100px;
 
   @include mq($bp-larger-than-tablet) {
     height: $header-height;
+    float: right;
   }
 }
 
