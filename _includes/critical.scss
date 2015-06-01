@@ -328,6 +328,7 @@ $header-height: 100px;
     + .menuItems,
     &:checked + .menuItems {
       height: $header-height;
+      @include transition(none);
     }
   }
 }
