@@ -276,15 +276,6 @@ $header-height: 100px;
   width: 100%;
   max-width: 100%;
 
-  @include mq($bp-larger-than-mobile) {
-    width: $container-width-larger-than-mobile;
-    padding: 0;
-  }
-
-  @include mq($bp-larger-than-phablet) {
-    width: $container-width-larger-than-phablet;
-  }
-
   @include mq($bp-larger-than-tablet) {
     max-width: $container-max-width;
     margin: 0 auto;
