@@ -6,4 +6,12 @@
 		color: #fff;
 		border-bottom: 5px solid $secondary-color;
 	}
+
+	.image {
+		height: 250px;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin-bottom: 10px;
+	}
 }
