@@ -253,6 +253,10 @@ $header-height: 100px;
   
   .container {
     padding: 0 0 0 10px;
+
+    @include mq($bp-larger-than-tablet) {
+      width: $container-width-larger-than-mobile;
+    }
   }
 }
 
@@ -276,7 +280,7 @@ $header-height: 100px;
   width: 100%;
 
   @include mq($bp-larger-than-tablet) {
-    width: $container-width-larger-than-phablet; /* Inherited from phablet breakpoint */
+    width: $container-width-larger-than-mobile; /* Inherited from phablet breakpoint */
     max-width: $container-max-width;
     margin: 0 auto;
     position: relative;
