@@ -1,5 +1,6 @@
 ---
 layout: compress
+atf: atf_home.scss
 ---
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
@@ -9,8 +10,62 @@ layout: compress
     {% include navigation.html %}
     <div class="container">
       <div class="row">
-        <div class="slider twelve columns">
-          <div class="image" style="background-image:url('{{ site.images_url }}healthy-food.jpg')"></div>
+        <div class="twelve columns">
+          <article id="slider">
+            <!-- Slider Setup -->
+            <input checked="" type="radio" name="slider" id="slide1" selected="false">
+            <input type="radio" name="slider" id="slide2" selected="false">
+            <input type="radio" name="slider" id="slide3" selected="false">
+            <input type="radio" name="slider" id="slide4" selected="true">
+            <input type="radio" name="slider" id="slide5" selected="true">
+          
+          
+            <!-- The Slider -->
+            <div id="slides">
+              <div id="overflow">
+                <div class="inner">
+                  <article>
+                    <div class="info"><h3>Cloud Dragon</h3> by <a href="http://voyager3.tumblr.com">Brendan Zabarauskas</a></div>
+                    <img src="CouldDragonByBjzaba.png">
+                  </article>
+                  <article>
+                    <div class="info"><h3>Mountain Fort</h3> by <a href="http://voyager3.tumblr.com">Brendan Zabarauskas</a></div>
+                    <img src="MountainFortByBjzaba.png">
+                  </article>
+                  <article>
+                    <div class="info"><h3>Mountain Outpost</h3> by <a href="http://voyager3.tumblr.com">Brendan Zabarauskas</a></div>
+                    <img src="MountainOutpostByBjzaba.png">
+                  </article>
+                  <article>
+                    <div class="info"><h3>Cliffs</h3> by <a href="http://voyager3.tumblr.com">Brendan Zabarauskas</a></div>
+                    <img src="CliffsByBjzaba.png">
+                  </article>
+                  <article>
+                    <div class="info"><h3>Hill Fort</h3> by <a href="http://voyager3.tumblr.com">Brendan Zabarauskas</a></div>
+                    <img src="HillFortByBjzaba.png">
+                  </article>
+                </div> <!-- .inner -->
+              </div> <!-- #overflow -->
+            </div> <!-- #slides -->
+          
+          
+            <!-- Controls and Active Slide Display -->
+            <div id="controls">
+              <label for="slide1"></label>
+              <label for="slide2"></label>
+              <label for="slide3"></label>
+              <label for="slide4"></label>
+              <label for="slide5"></label>
+            </div> <!-- #controls -->
+            
+            <div id="active">
+              <label for="slide1"></label>
+              <label for="slide2"></label>
+              <label for="slide3"></label>
+              <label for="slide4"></label>
+              <label for="slide5"></label>
+            </div> <!-- #active -->
+          </article>
         </div>
       </div>
       <div class="row">
