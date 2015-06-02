@@ -383,6 +383,12 @@ $header-height: 100px;
   }
 }
 
+.image,
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
 .footer {
   padding-top: 10px;
   margin-top: 10px;
