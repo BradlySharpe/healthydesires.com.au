@@ -247,6 +247,8 @@ $header-height: 100px;
 	background: $primary-color;
 }
 
+$header-container-width-large: 90%;
+
 .header {
   margin-bottom: 10px;
 
@@ -258,7 +260,7 @@ $header-height: 100px;
     padding: 0 0 0 10px;
 
     @include mq($bp-larger-than-tablet) {
-      width: $container-width-larger-than-mobile;
+      width: $header-container-width-large;
     }
   }
 }
@@ -283,7 +285,7 @@ $header-height: 100px;
   width: 100%;
 
   @include mq($bp-larger-than-tablet) {
-    width: $container-width-larger-than-mobile; /* Inherited from phablet breakpoint */
+    width: $header-container-width-large;
     max-width: $container-max-width;
     margin: 0 auto;
     position: relative;
