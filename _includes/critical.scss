@@ -248,6 +248,8 @@ $header-height: 100px;
 }
 
 .header {
+  margin-bottom: 10px;
+
   @include mq($bp-larger-than-tablet) {
     height: $header-height;
   }
@@ -383,6 +385,7 @@ $header-height: 100px;
 
 .footer {
   padding-top: 10px;
+  margin-top: 10px;
 
   .heading {
     text-align: center;
