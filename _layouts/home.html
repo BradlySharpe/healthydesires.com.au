@@ -5,15 +5,16 @@ atf: atf_home.scss
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
   {% assign slidePrefix = 'slide' %}
+  {% assign slideArray = site.data.slider.home %}
   {% include head.html %}
-    {% include sliderStyles.css slider=site.data.slider.home prefix=slidePrefix %}
+    {% include sliderStyles.css slider=slideArray prefix=slidePrefix %}
   </head>
   <body>
     <!-- Last autobuild at {{ site.time }} -->
     {% include navigation.html %}
     <div class="container">
       <div class="row">
-        <div class="twelve columns">{% include sliderTemplate.html slider=site.data.slider.home prefix=slidePrefix %}</div>
+        <div class="twelve columns">{% include sliderTemplate.html slider=slideArray prefix=slidePrefix %}</div>
       </div>
       <div class="row">
         <div class="one-third column featured">
