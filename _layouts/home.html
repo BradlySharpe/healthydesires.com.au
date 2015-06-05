@@ -1,70 +1,115 @@
 ---
 layout: compress
 atf: atf_home.scss
+
 ---
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
   {% include head.html %}
+
+
+  {% assign prefix = 'slide' %}
+  <style type="text/css">
+
+    {% assign counter = 1 %}
+    {% for slide in site.data.slider.home.slides %}
+      {% if counter == site.data.slider.home.length %}
+      #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child(1)
+      {% else %}
+      #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ counter | plus:1 }}),
+      {% endif %}
+      {% assign counter=counter | plus:1 %} 
+    {% endfor %}
+    {
+      background: url('/images/next.png') no-repeat;
+      float: right;
+      margin: 0 -70px 0 0;
+      display: block;
+    }
+
+    {% assign counter = site.data.slider.home.length %}
+    {% for slide in site.data.slider.home.slides %}
+      {% if counter == 1 %}
+      #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ site.data.slider.home.length }})
+      {% else %}
+      #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ counter | minus:1 }}),
+      {% endif %}
+      {% assign counter=counter | minus:1 %} 
+    {% endfor %}
+    {
+      background: url('/images/prev.png') no-repeat;
+      float: left;
+      margin: 0 0 0 -70px;
+      display: block;
+    }
+
+
+    {% assign counter = 1 %}
+    {% for slide in site.data.slider.home.slides %}
+      #{{ slide.id | prepend: prefix }}:checked ~ .active label:nth-child({{ counter }}){%if counter < site.data.slider.home.length %},{% endif %}
+      {% assign counter=counter | plus:1 %} 
+    {% endfor %}
+    {
+      background: #333;
+      border-color: #333 !important;
+    }
+
+    {% assign counter = 1 %}
+    {% for slide in site.data.slider.home.slides %}
+      #{{ slide.id | prepend: prefix }}:checked ~ .slider:nth-child({{ counter }}) .info{%if counter < site.data.slider.home.length %},{% endif %}
+      {% assign counter=counter | plus:1 %} 
+    {% endfor %}
+    {
+      opacity: 1;
+      -webkit-transition: all 1s ease-out 0.6s;
+      -moz-transition: all 1s ease-out 0.6s;
+      -o-transition: all 1s ease-out 0.6s;
+      transition: all 1s ease-out 0.6s;
+    }
+
+    {% assign counter = 0 %}
+    {% for slide in site.data.slider.home.slides %}
+      #{{ slide.id | prepend: prefix }}:checked ~ .slides .inner { margin-left: {{ counter * -100 }}% }
+      {% assign counter=counter | plus:1 %} 
+    {% endfor %}
+  </style>
   <body>
     <!-- Last autobuild at {{ site.time }} -->
     {% include navigation.html %}
     <div class="container">
       <div class="row">
         <div class="twelve columns">
-          <article id="slider">
-            <!-- Slider Setup -->
-            <input checked="" type="radio" name="slider" id="slide1" selected="false">
-            <input type="radio" name="slider" id="slide2" selected="false">
-            <input type="radio" name="slider" id="slide3" selected="false">
-            <input type="radio" name="slider" id="slide4" selected="true">
-            <input type="radio" name="slider" id="slide5" selected="true">
+          <article class="slider">
+            {% assign first = true %}
+            {% for slide in site.data.slider.home.slides %}
+            <input type="radio" name="slider" id="{{ slide.id | prepend: prefix}}"{% if first == true %} checked="checked"{% endif %}>
+              {% assign first = false %}
+            {% endfor %}
           
-          
-            <!-- The Slider -->
-            <div id="slides">
-              <div id="overflow">
+            <div class="slides">
+              <div class="wrapper">
                 <div class="inner">
-                  <article>
-                    <div class="info"><h3>Cloud Dragon</h3> by <a href="http://voyager3.tumblr.com">Brendan Zabarauskas</a></div>
-                    <img src="/images/CouldDragonByBjzaba.png">
-                  </article>
-                  <article>
-                    <div class="info"><h3>Mountain Fort</h3> by <a href="http://voyager3.tumblr.com">Brendan Zabarauskas</a></div>
-                    <img src="/images/MountainFortByBjzaba.png">
-                  </article>
-                  <article>
-                    <div class="info"><h3>Mountain Outpost</h3> by <a href="http://voyager3.tumblr.com">Brendan Zabarauskas</a></div>
-                    <img src="/images/MountainOutpostByBjzaba.png">
-                  </article>
-                  <article>
-                    <div class="info"><h3>Cliffs</h3> by <a href="http://voyager3.tumblr.com">Brendan Zabarauskas</a></div>
-                    <img src="/images/CliffsByBjzaba.png">
-                  </article>
-                  <article>
-                    <div class="info"><h3>Hill Fort</h3> by <a href="http://voyager3.tumblr.com">Brendan Zabarauskas</a></div>
-                    <img src="/images/HillFortByBjzaba.png">
-                  </article>
-                </div> <!-- .inner -->
-              </div> <!-- #overflow -->
-            </div> <!-- #slides -->
+                  {% for slide in site.data.slider.home.slides %}
+                  <div class="slide">
+                    <!--<div class="info"><h5>Cloud Dragon</h5> by <a href="http://voyager3.tumblr.com">Brendan Zabarauskas</a></div>-->
+                    <img src="{{ slide.image | prepend: site.images_url }}">
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
           
-          
-            <!-- Controls and Active Slide Display -->
-            <div id="controls">
-              <label for="slide1"></label>
-              <label for="slide2"></label>
-              <label for="slide3"></label>
-              <label for="slide4"></label>
-              <label for="slide5"></label>
-            </div> <!-- #controls -->
+            <div class="controls">
+              {% for slide in site.data.slider.home.slides %}
+              <label for="{{ slide.id | prepend: prefix }}"></label>
+              {% endfor %}
+            </div>
             
-            <div id="active">
-              <label for="slide1"></label>
-              <label for="slide2"></label>
-              <label for="slide3"></label>
-              <label for="slide4"></label>
-              <label for="slide5"></label>
-            </div> <!-- #active -->
+            <div class="active">
+              {% for slide in site.data.slider.home.slides %}
+              <label for="{{ slide.id | prepend: prefix }}"></label>
+              {% endfor %}
+            </div>
           </article>
         </div>
       </div>
