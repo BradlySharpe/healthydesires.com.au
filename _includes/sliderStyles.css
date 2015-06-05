@@ -13,7 +13,7 @@
   {
     background: url('/images/next.png') no-repeat;
     float: right;
-    margin: 0 -70px 0 0;
+    margin: 0 -7rem 0 0;
     display: block;
   }
 
@@ -29,7 +29,7 @@
   {
     background: url('/images/prev.png') no-repeat;
     float: left;
-    margin: 0 0 0 -70px;
+    margin: 0 0 0 -7rem;
     display: block;
   }
 
@@ -40,8 +40,8 @@
     {% assign counter=counter | plus:1 %} 
   {% endfor %}
   {
-    background: #333;
-    border-color: #333 !important;
+    background: #007177;
+    border-color: #007177 !important;
   }
 
   {% assign counter = 1 %}

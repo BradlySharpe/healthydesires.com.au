@@ -1,9 +1,16 @@
+@charset "utf-8";
+
+@import
+  "settings"
+;
+
 .slider {
 	-webkit-transform: translateZ(0);
 	-webkit-transition: all 0.5s ease-out;
 	-moz-transition: all 0.5s ease-out;
 	-o-transition: all 0.5s ease-out;
 	transition: all 0.5s ease-out;
+	margin: -3.5rem 0 0 1rem;
 
 	input[type="radio"] {
 		display: none;
@@ -16,7 +23,7 @@
 }
 
 .slides {
-	margin: 45px 0 0;
+	margin: 4.5rem 0 0;
 	padding: 1% 0;
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
@@ -60,19 +67,19 @@
 	@include mq($bp-larger-than-mobile) {
 		margin: -25% 0 0 15%;
 		width: 70%;
-		height: 50px;
+		height: 5rem;
 	}
 
 	@include mq($bp-larger-than-tablet) {
 		margin: -25% 0 0 0;
 		width: 100%;
-		height: 50px;
+		height: 5rem;
 	}
 	
 	label { 
 		display: none;
-		width: 50px;
-		height: 50px;
+		width: 5rem;
+		height: 5rem;
 		opacity: 0.3;
 		-webkit-transform: translateZ(0);
 		-webkit-transition: opacity 0.2s ease-out;
@@ -121,17 +128,16 @@
 	}
 	
 	label {
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		border-radius: 5px;
+		-webkit-border-radius: 0.5rem;
+		-moz-border-radius: 0.5rem;
+		border-radius: 0.5rem;
 		display: inline-block;
-		width: 10px;
-		height: 10px;
-		background: #bbb;
+		width: 1rem;
+		height: 1rem;
+		background: $primary-color;
 
 		&:hover {
-			background: #ccc;
-			border-color: #777 !important;
+			background: $secondary-color;
 		}
 	}
 }
@@ -139,20 +145,20 @@
 /* Info Box */
 
 .info {
-	line-height: 20px;
+	line-height: 2rem;
 	margin: 0 0 -150%;
 	position: absolute;
 	font-style: italic;
-	padding: 30px 30px;
+	padding: 3rem;
 	opacity: 0;
 	color: #000;
 	text-align: left;
 
 	h3 {
 		color: #333;
-		margin: 0 0 5px;
+		margin: 0 0 0.5rem;
 		font-weight: normal;
-		font-size: 22px;
+		font-size: 2.2rem;
 		font-style: normal;
 	}
 }
