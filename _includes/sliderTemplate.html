@@ -1,0 +1,33 @@
+{% assign prefix = include.prefix %}
+{% assign slider = include.slider %}
+<div class="slider">
+  {% assign first = true %}
+  {% for slide in slider.slides %}
+  <input type="radio" name="slider" id="{{ slide.id | prepend: prefix}}"{% if first == true %} checked="checked"{% endif %}>
+    {% assign first = false %}
+  {% endfor %}
+
+  <div class="slides">
+    <div class="wrapper">
+      <div class="inner">
+        {% for slide in slider.slides %}
+        <div class="slide">
+          <img src="{{ slide.image | prepend: site.images_url }}">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    {% for slide in slider.slides %}
+    <label for="{{ slide.id | prepend: prefix }}"></label>
+    {% endfor %}
+  </div>
+  
+  <div class="active">
+    {% for slide in slider.slides %}
+    <label for="{{ slide.id | prepend: prefix }}"></label>
+    {% endfor %}
+  </div>
+</div>

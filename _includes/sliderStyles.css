@@ -1,0 +1,65 @@
+<style type="text/css">
+  {% assign prefix = include.prefix %}
+  {% assign slider = include.slider %}
+  {% assign counter = 1 %}
+  {% for slide in slider.slides %}
+    {% if counter == slider.length %}
+    #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child(1)
+    {% else %}
+    #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ counter | plus:1 }}),
+    {% endif %}
+    {% assign counter=counter | plus:1 %} 
+  {% endfor %}
+  {
+    background: url('/images/next.png') no-repeat;
+    float: right;
+    margin: 0 -70px 0 0;
+    display: block;
+  }
+
+  {% assign counter = 1 %}
+  {% for slide in slider.slides %}
+    {% if counter == 1 %}
+    #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ slider.length }}),
+    {% else %}
+    #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ counter | minus:1 }}){%if counter < (slider.length | minus:1) %},{% endif %}
+    {% endif %}
+    {% assign counter=counter | plus:1 %} 
+  {% endfor %}
+  {
+    background: url('/images/prev.png') no-repeat;
+    float: left;
+    margin: 0 0 0 -70px;
+    display: block;
+  }
+
+
+  {% assign counter = 1 %}
+  {% for slide in slider.slides %}
+    #{{ slide.id | prepend: prefix }}:checked ~ .active label:nth-child({{ counter }}){%if counter < slider.length %},{% endif %}
+    {% assign counter=counter | plus:1 %} 
+  {% endfor %}
+  {
+    background: #333;
+    border-color: #333 !important;
+  }
+
+  {% assign counter = 1 %}
+  {% for slide in slider.slides %}
+    #{{ slide.id | prepend: prefix }}:checked ~ .slider:nth-child({{ counter }}) .info{%if counter < slider.length %},{% endif %}
+    {% assign counter=counter | plus:1 %} 
+  {% endfor %}
+  {
+    opacity: 1;
+    -webkit-transition: all 1s ease-out 0.6s;
+    -moz-transition: all 1s ease-out 0.6s;
+    -o-transition: all 1s ease-out 0.6s;
+    transition: all 1s ease-out 0.6s;
+  }
+
+  {% assign counter = 0 %}
+  {% for slide in slider.slides %}
+    #{{ slide.id | prepend: prefix }}:checked ~ .slides .inner { margin-left: -{{ counter }}00% }
+    {% assign counter=counter | plus:1 %} 
+  {% endfor %}
+</style>

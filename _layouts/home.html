@@ -1,75 +1,12 @@
 ---
 layout: compress
 atf: atf_home.scss
-
 ---
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
+  {% assign slidePrefix = 'slide' %}
   {% include head.html %}
-    {% assign prefix = 'slide' %}
-    <style type="text/css">
-      {% assign counter = 1 %}
-      {% for slide in site.data.slider.home.slides %}
-        {% if counter == site.data.slider.home.length %}
-        #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child(1)
-        {% else %}
-        #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ counter | plus:1 }}),
-        {% endif %}
-        {% assign counter=counter | plus:1 %} 
-      {% endfor %}
-      {
-        background: url('/images/next.png') no-repeat;
-        float: right;
-        margin: 0 -70px 0 0;
-        display: block;
-      }
-
-      {% assign counter = 1 %}
-      {% for slide in site.data.slider.home.slides %}
-        {% if counter == 1 %}
-        #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ site.data.slider.home.length }}),
-        {% else %}
-        #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ counter | minus:1 }}){%if counter < (site.data.slider.home.length | minus:1) %},{% endif %}
-        {% endif %}
-        {% assign counter=counter | plus:1 %} 
-      {% endfor %}
-      {
-        background: url('/images/prev.png') no-repeat;
-        float: left;
-        margin: 0 0 0 -70px;
-        display: block;
-      }
-
-
-      {% assign counter = 1 %}
-      {% for slide in site.data.slider.home.slides %}
-        #{{ slide.id | prepend: prefix }}:checked ~ .active label:nth-child({{ counter }}){%if counter < site.data.slider.home.length %},{% endif %}
-        {% assign counter=counter | plus:1 %} 
-      {% endfor %}
-      {
-        background: #333;
-        border-color: #333 !important;
-      }
-
-      {% assign counter = 1 %}
-      {% for slide in site.data.slider.home.slides %}
-        #{{ slide.id | prepend: prefix }}:checked ~ .slider:nth-child({{ counter }}) .info{%if counter < site.data.slider.home.length %},{% endif %}
-        {% assign counter=counter | plus:1 %} 
-      {% endfor %}
-      {
-        opacity: 1;
-        -webkit-transition: all 1s ease-out 0.6s;
-        -moz-transition: all 1s ease-out 0.6s;
-        -o-transition: all 1s ease-out 0.6s;
-        transition: all 1s ease-out 0.6s;
-      }
-
-      {% assign counter = 0 %}
-      {% for slide in site.data.slider.home.slides %}
-        #{{ slide.id | prepend: prefix }}:checked ~ .slides .inner { margin-left: -{{ counter }}00% }
-        {% assign counter=counter | plus:1 %} 
-      {% endfor %}
-    </style>
+    {% include sliderStyles.css slider=site.data.slider.home prefix=slidePrefix %}
   </head>
   <body>
     <!-- Last autobuild at {{ site.time }} -->
@@ -77,38 +14,7 @@ atf: atf_home.scss
     <div class="container">
       <div class="row">
         <div class="twelve columns">
-          <article class="slider">
-            {% assign first = true %}
-            {% for slide in site.data.slider.home.slides %}
-            <input type="radio" name="slider" id="{{ slide.id | prepend: prefix}}"{% if first == true %} checked="checked"{% endif %}>
-              {% assign first = false %}
-            {% endfor %}
-          
-            <div class="slides">
-              <div class="wrapper">
-                <div class="inner">
-                  {% for slide in site.data.slider.home.slides %}
-                  <div class="slide">
-                    <!--<div class="info"><h5>Cloud Dragon</h5> by <a href="http://voyager3.tumblr.com">Brendan Zabarauskas</a></div>-->
-                    <img src="{{ slide.image | prepend: site.images_url }}">
-                  </div>
-                  {% endfor %}
-                </div>
-              </div>
-            </div>
-          
-            <div class="controls">
-              {% for slide in site.data.slider.home.slides %}
-              <label for="{{ slide.id | prepend: prefix }}"></label>
-              {% endfor %}
-            </div>
-            
-            <div class="active">
-              {% for slide in site.data.slider.home.slides %}
-              <label for="{{ slide.id | prepend: prefix }}"></label>
-              {% endfor %}
-            </div>
-          </article>
+          {% include sliderTemplate.html slider=site.data.slider.home prefix=slidePrefix %}
         </div>
       </div>
       <div class="row">
