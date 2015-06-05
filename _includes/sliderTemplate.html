@@ -34,31 +34,17 @@
 
 <script type="text/javascript">
   {% assign counter = 1 %}
-  var {{ slider.name }}Slider = {
-    slideIds: [
+  var {{ slider.name }}Slider={
+    slideIds:[
       {% for slide in slider.slides %}
         '{{ slide.id | prepend: prefix }}'{%if counter < slider.slides.size %},{% endif %} 
         {% assign counter=counter | plus:1 %} 
       {% endfor %}
     ],
-    currentIndex: 0,
-    maxIndex: {{ slider.slides.size | minus:1  }},
-    next : function() {
-      var el;
-      if ((this.currentIndex + 1) >= this.maxIndex) {
-        this.currentIndex = 0;
-        el = document.getElementById(this.slideIds[this.currentIndex]);
-      } else {
-        this.currentIndex = this.currentIndex + 1;
-        el = document.getElementById(this.slideIds[this.currentIndex]);
-      }
-      if (el) {
-        el.checked = true;
-      }
-    }
-  }
-
-  setInterval(function() {
-    {{ slider.name }}Slider.next.call({{ slider.name }}Slider);
-  }, 2000);
+    currentIndex:0,
+    maxIndex:{{ slider.slides.size | minus:1  }},
+    interval : undefined,
+    next:function(){var e;this.currentIndex+1>this.maxIndex?(this.currentIndex=0,e=document.getElementById(this.slideIds[this.currentIndex])):(this.currentIndex=this.currentIndex+1,e=document.getElementById(this.slideIds[this.currentIndex])),e&&(e.checked=!0)}
+  };
+  {{ slider.name }}Slider.interval=setInterval(function() { {{ slider.name }}Slider.next.call({{ slider.name }}Slider); }, 2e3);
 </script>
