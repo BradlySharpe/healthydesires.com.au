@@ -3,7 +3,7 @@
   {% assign slider = include.slider %}
   {% assign counter = 1 %}
   {% for slide in slider.slides %}
-    {% if counter == slider.length %}
+    {% if counter == slider.slides.size %}
     #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child(1)
     {% else %}
     #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ counter | plus:1 }}),
@@ -20,9 +20,9 @@
   {% assign counter = 1 %}
   {% for slide in slider.slides %}
     {% if counter == 1 %}
-    #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ slider.length }}),
+    #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ slider.slides.size }}),
     {% else %}
-    #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ counter | minus:1 }}){%if counter < (slider.length | minus:1) %},{% endif %}
+    #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ counter | minus:1 }}){%if counter < (slider.slides.size | minus:1) %},{% endif %}
     {% endif %}
     {% assign counter=counter | plus:1 %} 
   {% endfor %}
@@ -36,7 +36,7 @@
 
   {% assign counter = 1 %}
   {% for slide in slider.slides %}
-    #{{ slide.id | prepend: prefix }}:checked ~ .active label:nth-child({{ counter }}){%if counter < slider.length %},{% endif %}
+    #{{ slide.id | prepend: prefix }}:checked ~ .active label:nth-child({{ counter }}){%if counter < slider.slides.size %},{% endif %}
     {% assign counter=counter | plus:1 %} 
   {% endfor %}
   {
@@ -46,7 +46,7 @@
 
   {% assign counter = 1 %}
   {% for slide in slider.slides %}
-    #{{ slide.id | prepend: prefix }}:checked ~ .slider:nth-child({{ counter }}) .info{%if counter < slider.length %},{% endif %}
+    #{{ slide.id | prepend: prefix }}:checked ~ .slider:nth-child({{ counter }}) .info{%if counter < slider.slides.size %},{% endif %}
     {% assign counter=counter | plus:1 %} 
   {% endfor %}
   {
