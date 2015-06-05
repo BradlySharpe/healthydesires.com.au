@@ -43,8 +43,11 @@
     ],
     currentIndex:0,
     maxIndex:{{ slider.slides.size | minus:1  }},
-    interval : undefined,
-    next:function(){var e;this.currentIndex+1>this.maxIndex?(this.currentIndex=0,e=document.getElementById(this.slideIds[this.currentIndex])):(this.currentIndex=this.currentIndex+1,e=document.getElementById(this.slideIds[this.currentIndex])),e&&(e.checked=!0)}
+    timer : undefined,
+    interval : 3e3,
+    next:function(){var e;this.currentIndex+1>this.maxIndex?(this.currentIndex=0,e=document.getElementById(this.slideIds[this.currentIndex])):(this.currentIndex=this.currentIndex+1,e=document.getElementById(this.slideIds[this.currentIndex])),e&&(e.checked=!0)}.
+    start:function(){this.timer=setInterval(function() { {{ slider.name }}Slider.next.call({{ slider.name }}Slider); }, this.interval)},
+    stop:function(){this.timer=undefined,clearInterval(this.timer)}
   };
-  {{ slider.name }}Slider.interval=setInterval(function() { {{ slider.name }}Slider.next.call({{ slider.name }}Slider); }, 2e3);
+  {{ slider.name }}Slider.start();
 </script>
