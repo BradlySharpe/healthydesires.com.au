@@ -33,6 +33,7 @@
 </div>
 
 <script type="text/javascript">
+  {% assign counter = 1 %}
   var {{ slider.name }}Slider = {
     slideIds: [
       {% for slide in slider.slides %}
