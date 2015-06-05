@@ -1,4 +1,5 @@
 home: 
+  name: 'hero'
   slides: 
     - 
       id: first
