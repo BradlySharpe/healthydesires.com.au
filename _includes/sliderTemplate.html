@@ -33,10 +33,13 @@
 </div>
 
 <script type="text/javascript">
-  var slideIds = [];
+  {% assign counter = 1 %}
+  var slideIds = [
   {% for slide in slider.slides %}
-    slideIds.push['{{ slide.id }}'];  
+    '{{ slide.id }}'{%if counter < slider.slides.size %},{% endif %} 
+    {% assign counter=counter | plus:1 %} 
   {% endfor %}
+  ];
 
   console.log("ids", slideIds);
 </script>
