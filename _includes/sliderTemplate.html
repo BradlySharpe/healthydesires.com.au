@@ -31,3 +31,12 @@
     {% endfor %}
   </div>
 </div>
+
+<script type="text/javascript">
+  var slideIds = [];
+  {% for slide in slider.slides %}
+    slideIds.push['{{ slide.id }}'];  
+  {% endfor %}
+
+  console.log("ids", slideIds);
+</script>
