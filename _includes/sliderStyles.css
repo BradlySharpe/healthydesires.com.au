@@ -40,8 +40,8 @@
     {% assign counter=counter | plus:1 %} 
   {% endfor %}
   {
-    background: #007177;
-    border-color: #007177 !important;
+    background: #333;
+    border-color: #333 !important;
   }
 
   {% assign counter = 1 %}
