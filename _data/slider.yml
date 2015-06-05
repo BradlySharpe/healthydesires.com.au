@@ -1,9 +1,12 @@
-home:
+home: 
   length: 3
-  slides:
-  	- id: first
-  	  image: HillFortByBjzaba.png
-  	- id: second
-  	  image: MountainFortByBjzaba.png
-  	- id: third
-  	  image: MountainOutpostByBjzaba.png
+  slides: 
+    - 
+      id: first
+      image: HillFortByBjzaba.png
+    - 
+      id: second
+      image: MountainFortByBjzaba.png
+    - 
+      id: third
+      image: MountainOutpostByBjzaba.png
