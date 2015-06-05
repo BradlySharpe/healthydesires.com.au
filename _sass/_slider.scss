@@ -117,12 +117,12 @@
 	text-align: center;
 	
 	label {
-		-webkit-border-radius: 1rem;
-		-moz-border-radius: 1rem;
-		border-radius: 1rem;
+		-webkit-border-radius: 0.75rem;
+		-moz-border-radius: 0.75rem;
+		border-radius: 0.75rem;
 		display: inline-block;
-		width: 2rem;
-		height: 2rem;
+		width: 1.5rem;
+		height: 1.5rem;
 		background: $primary-color;
 
 		&:hover {
