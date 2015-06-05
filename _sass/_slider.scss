@@ -124,10 +124,15 @@
 		width: 1.5rem;
 		height: 1.5rem;
 		background: $primary-color;
+		margin-right: 0.5rem;
 
 		&:hover {
 			background: $secondary-color;
 		}
+	}
+
+	label:last-child {
+		margin-right: 0;
 	}
 }
 
