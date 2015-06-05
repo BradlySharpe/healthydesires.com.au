@@ -27,9 +27,9 @@ atf: atf_home.scss
       {% assign counter = 1 %}
       {% for slide in site.data.slider.home.slides %}
         {% if counter == 1 %}
-        #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ site.data.slider.home.length }})
+        #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ site.data.slider.home.length }}),
         {% else %}
-        #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ counter | minus:1 }}),
+        #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ counter | minus:1 }}){%if counter < (site.data.slider.home.length | minus:1) %},{% endif %}
         {% endif %}
         {% assign counter=counter | plus:1 %} 
       {% endfor %}
