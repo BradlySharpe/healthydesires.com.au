@@ -26,13 +26,13 @@
     </div>
   </div>
 
-  <!--
+  {% comment %}
   <div class="controls">
     {% for slide in slider.slides %}
     <label for="{{ slide.id | prepend: prefix }}"></label>
     {% endfor %}
   </div>
-  -->
+  {% endcomment %}
   
   <div class="active">
     {% for slide in slider.slides %}
