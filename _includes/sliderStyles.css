@@ -4,9 +4,9 @@
   {% assign counter = 1 %}
   {% for slide in slider.slides %}
     {% if counter == slider.slides.size %}
-    .slider.{{ prefix }} #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child(1)
+    .slider.{{ slider.name }} #{{ slide.id | prepend: prefix }}:checked ~ .slider.{{ slider.name }} .controls label:nth-child(1)
     {% else %}
-    .slider.{{ prefix }} #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ counter | plus:1 }}),
+    .slider.{{ slider.name }} #{{ slide.id | prepend: prefix }}:checked ~ .slider.{{ slider.name }} .controls label:nth-child({{ counter | plus:1 }}),
     {% endif %}
     {% assign counter=counter | plus:1 %} 
   {% endfor %}
@@ -20,9 +20,9 @@
   {% assign counter = 1 %}
   {% for slide in slider.slides %}
     {% if counter == 1 %}
-    .slider.{{ prefix }} #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ slider.slides.size }}),
+    .slider.{{ slider.name }} #{{ slide.id | prepend: prefix }}:checked ~ .slider.{{ slider.name }} .controls label:nth-child({{ slider.slides.size }}),
     {% else %}
-    .slider.{{ prefix }} #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ counter | minus:1 }}){%if counter < (slider.slides.size | minus:1) %},{% endif %}
+    .slider.{{ slider.name }} #{{ slide.id | prepend: prefix }}:checked ~ .slider.{{ slider.name }} .controls label:nth-child({{ counter | minus:1 }}){%if counter < (slider.slides.size | minus:1) %},{% endif %}
     {% endif %}
     {% assign counter=counter | plus:1 %} 
   {% endfor %}
@@ -35,7 +35,7 @@
 
   {% assign counter = 1 %}
   {% for slide in slider.slides %}
-    .slider.{{ prefix }} #{{ slide.id | prepend: prefix }}:checked ~ .active label:nth-child({{ counter }}){%if counter < slider.slides.size %},{% endif %}
+    .slider.{{ slider.name }} #{{ slide.id | prepend: prefix }}:checked ~ .slider.{{ slider.name }} .active label:nth-child({{ counter }}){%if counter < slider.slides.size %},{% endif %}
     {% assign counter=counter | plus:1 %} 
   {% endfor %}
   {
@@ -45,7 +45,7 @@
 
   {% assign counter = 1 %}
   {% for slide in slider.slides %}
-    .slider.{{ prefix }} #{{ slide.id | prepend: prefix }}:checked ~ .slider:nth-child({{ counter }}) .info{%if counter < slider.slides.size %},{% endif %}
+    .slider.{{ slider.name }} #{{ slide.id | prepend: prefix }}:checked ~ .slider.{{ slider.name }} .slider:nth-child({{ counter }}) .info{%if counter < slider.slides.size %},{% endif %}
     {% assign counter=counter | plus:1 %} 
   {% endfor %}
   {
@@ -57,7 +57,7 @@
   }
 
   {% if slider.sprite != nil and slider.sprite == true %}
-    .slider.{{ prefix }} .slides .inner.sprite img { 
+    .slider.{{ slider.name }} .slides .inner.sprite img { 
       max-width: 100%;
       background-size: 100%;
       background-image: url('{{ slider.image | prepend: site.images_url }}');
@@ -66,7 +66,7 @@
 
   {% assign counter = 0 %}
   {% for slide in slider.slides %}
-    .slider.{{ prefix }} #{{ slide.id | prepend: prefix }}:checked ~ .slides .inner { margin-left: -{{ counter }}00% }
+    .slider.{{ slider.name }} #{{ slide.id | prepend: prefix }}:checked ~ .slider.{{ slider.name }} .slides .inner { margin-left: -{{ counter }}00% }
     {% assign counter=counter | plus:1 %} 
   {% endfor %}
 
