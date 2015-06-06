@@ -16,7 +16,7 @@
         <div class="slide">
           <img src="{{ slide.image | prepend: site.images_url }}">
           {% if slide.info.show != nil and slide.info.show == true %}
-          <div class="info">
+          <div class="info{% if slide.info.button.show != nil and slide.info.button.show == true %} hasButton{% endif %}">
             {% if slide.info.button.show != nil and slide.info.button.show == true %}
             <a href="{{ slide.info.button.url }}" class="button button-primary" title="{{ slide.info.button.text }}">{{ slide.info.button.text }}</a>
             {% endif %}

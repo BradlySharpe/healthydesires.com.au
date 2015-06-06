@@ -57,13 +57,36 @@
 			background: #fff;
 			background: rgba(255,255,255,0.75);
 			box-sizing: border-box;
-			text-align: center;
-			@include mq($bp-larger-than-phablet) {
-				text-align: left;
-			}
 
 			@include mq($bp-larger-than-tablet) {
 				padding: 2rem;
+			}
+
+			h5 {
+				color: $dark-grey;
+				line-height: 3.8rem;
+				margin: 0;
+				text-align: center;
+
+				@include mq($bp-larger-than-tablet) {
+					text-align: left;
+				}
+			}
+
+			p {
+				margin: 0;
+				line-height: 1.6;
+				display: none;
+				@include mq($bp-larger-than-tablet) {
+					display: block;
+				}
+			}
+		}
+
+		.info.hasButton {
+			text-align: center;
+			@include mq($bp-larger-than-phablet) {
+				text-align: left;
 			}
 
 			h5 {
@@ -88,7 +111,7 @@
 
 			.button {
 				margin: 0;
-				
+
 				@include mq($bp-larger-than-phablet) {
 					float: right;
 				}
