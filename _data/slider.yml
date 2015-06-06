@@ -1,11 +1,11 @@
 home: 
   name: 'hero'
   sprite: true
+  image: slider-sprite.png
+  base64: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA64AAAH0AQMAAAAHQuKJAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAFFJREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADg2wDobAABrKiyCwAAAABJRU5ErkJggg=="
   slides: 
     - 
       id: balls
-      image: slider-sprite.png
-      base64: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA64AAAH0AQMAAAAHQuKJAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAFFJREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADg2wDobAABrKiyCwAAAABJRU5ErkJggg=="
       alt: balls
       info:
         show: true
@@ -17,13 +17,9 @@ home:
           text: "Buy Now"
     - 
       id: berry-cheezecake
-      image: slider-sprite.png
-      base64: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA64AAAH0AQMAAAAHQuKJAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAFFJREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADg2wDobAABrKiyCwAAAABJRU5ErkJggg=="
       alt: "berry cheezecake"
     - 
       id: cheezecake
-      image: slider-sprite.png
-      base64: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA64AAAH0AQMAAAAHQuKJAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAFFJREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADg2wDobAABrKiyCwAAAABJRU5ErkJggg=="
       alt: cheezecake
       info:
         show: true
@@ -31,11 +27,9 @@ home:
         text: "Something about the image"
     - 
       id: slice
-      image: slider-sprite.png
-      base64: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA64AAAH0AQMAAAAHQuKJAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAFFJREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADg2wDobAABrKiyCwAAAABJRU5ErkJggg=="
       alt: slice
 old: 
-  name: 'hero'
+  name: 'old'
   sprite: false
   slides: 
     - 

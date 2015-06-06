@@ -14,7 +14,7 @@
         <div class="slide">
           {% assign imageName = (slide.image | prepend: site.images_url) %}
           {% if slider.sprite != nil and slider.sprite == true %}
-            {% assign imageName = slide.base64 %}
+            {% assign imageName = slider.base64 %}
           {% endif %}
           <img src="{{ imageName }}" alt="{{ slide.alt }}"{% if slider.sprite != nil and slider.sprite == true %} style="background-position: 0 {{ counter | times:percentage }}%"{% endif %}>
           {% if slide.info.show != nil and slide.info.show == true %}

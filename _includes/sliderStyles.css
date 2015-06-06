@@ -60,7 +60,7 @@
     .slides .inner.sprite img { 
       max-width: 100%;
       background-size: 100%;
-      background-image: url('{{ slide.image | prepend: site.images_url }}');
+      background-image: url('{{ slider.image | prepend: site.images_url }}');
     }
   {% endif %}
 
