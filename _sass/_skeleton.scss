@@ -128,8 +128,8 @@ input {
 .button.button-primary:hover,
 button.button-primary:hover {
   color: #fff;
-  background-color: $link-color;
-  border-color: $link-color;
+  background-color: $secondary-color;
+  border-color: $secondary-color;
 }
 
 input {
@@ -137,16 +137,16 @@ input {
   &[type="reset"].button-primary:hover,
   &[type="button"].button-primary:hover {
     color: #fff;
-    background-color: $link-color;
-    border-color: $link-color;
+    background-color: $secondary-color;
+    border-color: $secondary-color;
   }
 }
 
 .button.button-primary:focus,
 button.button-primary:focus {
   color: #fff;
-  background-color: $link-color;
-  border-color: $link-color;
+  background-color: $secondary-color;
+  border-color: $secondary-color;
 }
 
 input {
@@ -154,8 +154,8 @@ input {
   &[type="reset"].button-primary:focus,
   &[type="button"].button-primary:focus {
     color: #fff;
-    background-color: $link-color;
-    border-color: $link-color;
+    background-color: $secondary-color;
+    border-color: $secondary-color;
   }
   &[type="email"],
   &[type="number"],
