@@ -9,7 +9,11 @@
     <div class="wrapper">
       <div class="inner{% if slider.sprite != nil and slider.sprite == true %} sprite{% endif %}">
         {% assign counter = 0 %}
-        {% assign percentage = 100 | divided_by: (slider.slides.size | minus:1) %}
+        <!-- slides: {{ slider.slides.size }} -->
+        {% assign slidesLessOne = slider.slides.size | minus:1 %}
+        <!-- slidesLessOne: {{ slidesLessOne }} -->
+        {% assign percentage = 100 | divided_by: slidesLessOne %}
+        <!-- percentage: {{ percentage }} -->
         {% for slide in slider.slides %}
         <div class="slide">
           {% assign imageName = (slide.image | prepend: site.images_url) %}
