@@ -1,5 +1,38 @@
 home: 
   name: 'hero'
+  sprite: false
+  slides: 
+    - 
+      id: balls
+      image: slider-sprite.png
+      alt: balls
+      info:
+        show: true
+        heading: "Balls"
+        text: "Something about the image"
+        button:
+          show: true
+          url: "/shop/balls/"
+          text: "Buy Now"
+    - 
+      id: berry-cheezecake
+      image: slider-sprite.png
+      alt: "berry cheezecake"
+    - 
+      id: cheezecake
+      image: slider-sprite.png
+      alt: cheezecake
+      info:
+        show: true
+        heading: "Balls"
+        text: "Something about the image"
+    - 
+      id: slice
+      image: slider-sprite.png
+      alt: slice
+old: 
+  name: 'hero'
+  sprite: false
   slides: 
     - 
       id: balls

@@ -56,9 +56,24 @@
     transition: all 1s ease-out 0.6s;
   }
 
-  {% assign counter = 0 %}
-  {% for slide in slider.slides %}
-    #{{ slide.id | prepend: prefix }}:checked ~ .slides .inner { margin-left: -{{ counter }}00% }
-    {% assign counter=counter | plus:1 %} 
-  {% endfor %}
+  {% if slider.sprite != nil and slider.sprite == true %}
+    {% assign counter = 0 %}
+    {% for slide in slider.slides %}
+      #{{ slide.id | prepend: prefix }}:checked ~ .slides .inner.sprite img { 
+        max-width: 100%;
+        background-size: 100%;
+        background-image: {{ slide.url }};
+        background-position: 0 {{ (counter * 25) }}%;
+      }
+      {% assign counter=counter | plus:1 %} 
+    {% endfor %}
+  {% else %}
+    {% assign counter = 0 %}
+    {% for slide in slider.slides %}
+      #{{ slide.id | prepend: prefix }}:checked ~ .slides .inner { margin-left: -{{ counter }}00% }
+      {% assign counter=counter | plus:1 %} 
+    {% endfor %}
+  {% endif %}
+
+
 </style>
