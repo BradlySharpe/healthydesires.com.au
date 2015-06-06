@@ -57,14 +57,34 @@
 			background: #fff;
 			background: rgba(255,255,255,0.75);
 			box-sizing: border-box;
+			text-align: center;
+			@include mq($bp-larger-than-phablet) {
+				text-align: left;
+			}
 
 			h5 {
 				color: $dark-grey;
 				text-align: left;
+				display: none;
+				line-height: 3.8rem;
+				@include mq($bp-larger-than-phablet) {
+					display: block;
+				}
 			}
 
 			p {
 				margin: 0;
+				line-height: 1.6;
+				display: none;
+				@include mq($bp-larger-than-tablet) {
+					display: block;
+				}
+			}
+
+			.button {
+				@include mq($bp-larger-than-phablet) {
+					float: right;
+				}
 			}
 		}
 	}
