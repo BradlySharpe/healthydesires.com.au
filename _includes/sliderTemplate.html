@@ -1,4 +1,4 @@
-{% assign prefix = include.prefix %}{% assign slider = include.slider %}<div class="slider">
+{% assign prefix = include.prefix %}{% assign slider = include.slider %}<div class="slider {{ prefix }}">
   {% assign first = true %}
   {% for slide in slider.slides %}
   <input type="radio" name="slider" id="{{ slide.id | prepend: prefix}}"{% if first == true %} checked="checked"{% endif %}>
