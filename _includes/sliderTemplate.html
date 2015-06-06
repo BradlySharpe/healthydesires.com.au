@@ -17,11 +17,11 @@
           <img src="{{ slide.image | prepend: site.images_url }}">
           {% if slide.info.show != nil and slide.info.show == true %}
           <div class="info">
+            {% if slide.info.button.show != nil and slide.info.button.show == true %}
+            <a href="{{ slide.info.button.url }}" class="button button-primary u-pull-right" title="{{ slide.info.button.text }}">{{ slide.info.button.text }}</a>
+            {% endif %}
             <h5>{{ slide.info.heading }}</h5>
             <p>{{ slide.info.text }}</p>
-            {% if slide.info.button.show != nil and slide.info.button.show == true %}
-            <a href="{{ slide.info.button.url }}" class="button button-primary" title="{{ slide.info.button.text }}">{{ slide.info.button.text }}</a>
-            {% endif %}
           </div>
           {% endif %}
         </div>

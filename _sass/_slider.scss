@@ -47,6 +47,26 @@
 	.slide {
 		width: 20%;
 		float: left;
+		position: relative;
+
+		.info {
+			position: absolute;
+			padding: 2rem;
+			bottom: 0;
+			width: 100%;
+			background: #fff;
+			background: rgba(255,255,255,0.75);
+			box-sizing: border-box;
+
+			h5 {
+				color: $dark-grey;
+				text-align: left;
+			}
+
+			p {
+				margin: 0;
+			}
+		}
 	}
 }
 
@@ -136,28 +156,7 @@
 	}
 }
 
-/* Info Box */
-
-.info {
-	line-height: 2rem;
-	margin: 0 0 -150%;
-	position: absolute;
-	font-style: italic;
-	padding: 3rem;
-	opacity: 0;
-	color: #000;
-	text-align: left;
-
-	h3 {
-		color: #333;
-		margin: 0 0 0.5rem;
-		font-weight: normal;
-		font-size: 2.2rem;
-		font-style: normal;
-	}
-}
-
-.info, .controls, .slides, .active, .active label, .info h3 {
+.controls, .slides, .active, .active label {
 	-webkit-transform: translateZ(0);
 	-webkit-transition: all 0.5s ease-out;
 	-moz-transition: all 0.5s ease-out;
