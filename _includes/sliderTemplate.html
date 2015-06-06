@@ -8,13 +8,15 @@
   <div class="slides">
     <div class="wrapper">
       <div class="inner{% if slider.sprite != nil and slider.sprite == true %} sprite{% endif %}">
+        {% assign counter = 0 %}
+        {% assign percentage = 100 | divided_by: slider.slides.size %}
         {% for slide in slider.slides %}
         <div class="slide">
           {% assign imageName = (slide.image | prepend: site.images_url) %}
           {% if slider.sprite != nil and slider.sprite == true %}
             {% assign imageName = slide.base64 %}
           {% endif %}
-          <img src="{{ imageName }}" alt="{{ slide.alt }}">
+          <img src="{{ imageName }}" alt="{{ slide.alt }}"{% if slider.sprite != nil and slider.sprite == true %} style="background-position: 0 {{ counter | times:percentage }}%"{% endif %}>
           {% if slide.info.show != nil and slide.info.show == true %}
           <div class="info{% if slide.info.button.show != nil and slide.info.button.show == true %} hasButton{% endif %}">
             {% if slide.info.button.show != nil and slide.info.button.show == true %}
@@ -25,6 +27,7 @@
           </div>
           {% endif %}
         </div>
+          {% assign counter=counter | plus:1 %} 
         {% endfor %}
       </div>
     </div>

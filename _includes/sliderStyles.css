@@ -57,16 +57,11 @@
   }
 
   {% if slider.sprite != nil and slider.sprite == true %}
-    {% assign counter = 0 %}
-    {% for slide in slider.slides %}
-      .slides .inner.sprite img:nth-child({{ counter | plus:1 }}) { 
-        max-width: 100%;
-        background-size: 100%;
-        background-image: url('{{ slide.image | prepend: site.images_url }}');
-        background-position: 0 {{ (counter | times:25) }}%;
-      }
-      {% assign counter=counter | plus:1 %} 
-    {% endfor %}
+    .slides .inner.sprite img { 
+      max-width: 100%;
+      background-size: 100%;
+      background-image: url('{{ slide.image | prepend: site.images_url }}');
+    }
   {% endif %}
 
   {% assign counter = 0 %}
