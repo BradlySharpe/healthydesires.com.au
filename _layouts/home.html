@@ -6,8 +6,10 @@ atf: atf_home.scss
 <html lang="en" prefix="og: http://ogp.me/ns#">
   {% assign slidePrefix = 'slide' %}
   {% assign slideArray = site.data.slider.home %}
+  {% assign slideArrayOld = site.data.slider.old %}
   {% include head.html %}
     {% include sliderStyles.css slider=slideArray prefix=slidePrefix %}
+    {% include sliderStyles.css slider=slideArrayOld prefix=slidePrefix %}
   </head>
   <body>
     <!-- Last autobuild at {{ site.time }} -->
@@ -15,6 +17,9 @@ atf: atf_home.scss
     <div class="container">
       <div class="row">
         <div class="twelve columns">{% include sliderTemplate.html slider=slideArray prefix=slidePrefix %}</div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">{% include sliderTemplate.html slider=slideArrayOld prefix=slidePrefix %}</div>
       </div>
       <div class="row">
         <div class="one-third  column featured">
