@@ -11,16 +11,9 @@
     {% assign counter=counter | plus:1 %} 
   {% endfor %}
   {
-    /*background: url('/images/next.png') no-repeat;*/
-    border-right: 3rem solid #333;
-    border-bottom: 3rem solid #333;
-    width: 5rem;
-    height: 5rem;
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+    background: url('/images/next.png') no-repeat;
     float: right;
-    margin: 2rem -7rem 0 0;
+    margin: 0 -7rem 0 0;
     display: block;
   }
 
