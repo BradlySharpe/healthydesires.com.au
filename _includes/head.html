@@ -45,7 +45,7 @@
     {% capture _critical_content %}
       {% include critical.scss %}
       {% if page.atf %}{% include {{ page.atf }} %}{% endif %}
+      {% include print.scss %}
     {% endcapture %}
     {{ _critical_content | scssify }}
   </style>
-  <link rel="stylesheet" media="print" href="{{ "/css/print.css" | prepend: site.assets_url }}" />
