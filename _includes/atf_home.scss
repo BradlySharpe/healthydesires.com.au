@@ -24,13 +24,29 @@
 		width: 100%;
 		margin: 0;
 
+		@include mq($bp-larger-than-desktop) {
+			width: grid-column-width(4);
+			margin-left: $column-margin;
+		}
+
 		.heading {
-			width: 40%;
+			width: 100%;
 			float: left;
+
+			@include mq($bp-larger-than-tablet) {
+				margin-right: 2rem;
+				width: 50%;
+			}
 		}
 
 		p {
-			margin: 5.6rem 2rem 2rem 2rem;
+			@include mq($bp-larger-than-tablet) {
+				margin-top: 5.6rem;
+			}
 		}
+	}
+
+	&.one-third.column:first-child {
+		margin-left: 0;
 	}
 }
