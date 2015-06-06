@@ -20,7 +20,17 @@
 		margin-bottom: 10px;
 	}
 
-	.one-third.column {
+	&.one-third.column {
 		width: 100%;
+		margin: 0;
+
+		.heading {
+			width: 40%;
+			float: left;
+		}
+
+		p {
+			margin: 5.6rem 2rem 2rem 2rem;
+		}
 	}
 }
