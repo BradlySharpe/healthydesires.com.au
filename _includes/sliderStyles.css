@@ -45,7 +45,7 @@
 
   {% assign counter = 1 %}
   {% for slide in slider.slides %}
-    .slider.{{ slider.name }}Slider #{{ slide.id | prepend: prefix }}:checked ~ .slide:nth-child({{ counter }}) .info{%if counter < slider.slides.size %},{% endif %}
+    .slider.{{ slider.name }}Slider #{{ slide.id | prepend: prefix }}:checked ~ .inner .slide:nth-child({{ counter }}) .info{%if counter < slider.slides.size %},{% endif %}
     {% assign counter=counter | plus:1 %} 
   {% endfor %}
   {
