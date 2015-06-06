@@ -4,15 +4,39 @@ home:
     - 
       id: balls
       image: balls-slider.jpg
+      info:
+        show: true
+        heading: "Balls"
+        text: "Something about the image"
+        button:
+          show: true
+          url: "/shop/balls/"
+          text: "Buy Now"
     - 
       id: mexican-feast
       image: mexican-feast-slider.jpg
     - 
       id: berry-cheezecake
       image: berry-cheezecake-slider.jpg
+      info:
+        show: false
+        heading: "Balls"
+        text: "Something about the image"
+        button:
+          show: true
+          url: "/shop/balls/"
+          text: "Buy Now"
     - 
       id: cheezecake
       image: cheezecake-slider.jpg
+      info:
+        show: true
+        heading: "Balls"
+        text: "Something about the image"
+        button:
+          show: false
+          url: "/shop/balls/"
+          text: "Buy Now"
     - 
       id: slice
       image: slice-slider.jpg
