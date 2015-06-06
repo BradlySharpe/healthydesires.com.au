@@ -37,11 +37,19 @@
 				margin-right: 2rem;
 				width: 50%;
 			}
+
+			@include mq($bp-larger-than-desktop) {
+				width: 100%;
+			}
 		}
 
 		p {
 			@include mq($bp-larger-than-tablet) {
 				margin-top: 5.6rem;
+			}
+
+			@include mq($bp-larger-than-desktop) {
+				margin-top: 0;
 			}
 		}
 	}
