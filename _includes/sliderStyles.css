@@ -1,5 +1,4 @@
 <style type="text/css">
-{% comment %}
   {% assign prefix = include.prefix %}
   {% assign slider = include.slider %}
   {% assign counter = 1 %}
@@ -33,7 +32,6 @@
     margin: 0 0 0 -7rem;
     display: block;
   }
-{% endcomment %}
 
   {% assign counter = 1 %}
   {% for slide in slider.slides %}
