@@ -3,16 +3,16 @@ home:
   slides: 
     - 
       id: balls
-      image: balls.jpg
+      image: balls-slider.jpg
     - 
       id: mexican-feast
-      image: mexican-feast.jpg
+      image: mexican-feast-slider.jpg
     - 
       id: berry-cheezecake
-      image: berry-cheezecake.jpg
+      image: berry-cheezecake-slider.jpg
     - 
       id: cheezecake
-      image: cheezecake.jpg
+      image: cheezecake-slider.jpg
     - 
       id: slice
-      image: slice.jpg
+      image: slice-slider.jpg
