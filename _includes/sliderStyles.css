@@ -62,8 +62,8 @@
       #{{ slide.id | prepend: prefix }}:checked ~ .slides .inner.sprite img { 
         max-width: 100%;
         background-size: 100%;
-        background-image: {{ slide.url }};
-        background-position: 0 {{ (counter * 25) }}%;
+        background-image: url('{{ slide.url }}');
+        background-position: 0 {{ (counter | times:25) }}%;
       }
       {% assign counter=counter | plus:1 %} 
     {% endfor %}
