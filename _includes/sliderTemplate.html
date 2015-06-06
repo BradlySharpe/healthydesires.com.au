@@ -13,7 +13,6 @@
         {% assign slidesLessOne = slider.slides.size | minus:1 %}
         <!-- slidesLessOne: {{ slidesLessOne }} -->
         {% assign percentage = 100.00 | divided_by: slidesLessOne %}
-        {% assign percentage = percentage | round: 5 %}
         <!-- percentage: {{ percentage }} -->
         {% for slide in slider.slides %}
         <div class="slide">
