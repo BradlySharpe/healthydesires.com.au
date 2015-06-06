@@ -68,5 +68,7 @@
     init:function() {this.slideIds.forEach(function(v) {var e; e=document.getElementById(v), e&&(e.onclick=function(){{{ slider.name }}Slider.stop();})});}
   };
   {{ slider.name }}Slider.init();
+  {% if include.autoplay == nil or include.autoplay == true %}
   {{ slider.name }}Slider.start();
+  {% endif %}
 </script>
