@@ -484,6 +484,9 @@ $header-container-width-large: 90%;
     &:checked + .menuItems {
       height: $header-height;
       @include transition(none);
+      /* BUG FIX: Issues with FF and IE where menu would still take up space above slider */
+      position: absolute;
+      right:0;
     }
   }
 }
