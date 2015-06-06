@@ -10,7 +10,7 @@
       <div class="inner">
         {% for slide in slider.slides %}
         <div class="slide">
-          <img src="{{ slide.image | prepend: site.images_url }}">
+          <img src="{{ slide.image | prepend: site.images_url }}" alt="{{ slide.alt }}">
           {% if slide.info.show != nil and slide.info.show == true %}
           <div class="info{% if slide.info.button.show != nil and slide.info.button.show == true %} hasButton{% endif %}">
             {% if slide.info.button.show != nil and slide.info.button.show == true %}
