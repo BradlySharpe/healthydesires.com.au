@@ -10,7 +10,11 @@
       <div class="inner{% if slider.sprite != nil and slider.sprite == true %} sprite{% endif %}">
         {% for slide in slider.slides %}
         <div class="slide">
-          <img{% if slider.sprite == nil or slider.sprite != true %} src="{{ slide.image | prepend: site.images_url }}"{% endif %} alt="{{ slide.alt }}">
+          {% assign imageName = (slide.image | prepend: site.images_url) %}
+          {% if slider.sprite != nil and slider.sprite == true %}
+            {% assign imageName = slide.base64 %}
+          {% endif %}
+          <img src="{{ imageName }}" alt="{{ slide.alt }}">
           {% if slide.info.show != nil and slide.info.show == true %}
           <div class="info{% if slide.info.button.show != nil and slide.info.button.show == true %} hasButton{% endif %}">
             {% if slide.info.button.show != nil and slide.info.button.show == true %}
