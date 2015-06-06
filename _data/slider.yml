@@ -1,6 +1,6 @@
 home: 
   name: 'hero'
-  sprite: false
+  sprite: true
   slides: 
     - 
       id: balls
