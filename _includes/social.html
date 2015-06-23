@@ -22,4 +22,6 @@
 <meta name="twitter:image" content="{{ site.business.logo | prepend: site.baseurl | prepend: site.url }}" />
 {% endif %}
 
-<meta name="test" content="{{ page.url | slice: 0 }}" />
+{% assign test = page.url %}
+{% assign test = test | slice: 0 %}
+<meta name="test" content="{{ test }}" />
