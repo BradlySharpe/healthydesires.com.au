@@ -7,6 +7,21 @@ excerpt_separator: <!--more-->
 permalink: /blog/:categories/:title.html
 baseurl: ""
 
+# Collections
+collections:
+  fitness:
+    output: true
+    permalink: /fitness/:path/
+  massage:
+    output: true
+    permalink: /massage/:path/
+  recipes:
+    output: true
+    permalink: /recipes/:path/
+  store:
+    output: true
+    permalink: /store/:path/
+
 
 # URL Settings
 #   DEVELOPMENT
