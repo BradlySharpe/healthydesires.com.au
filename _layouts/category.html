@@ -5,6 +5,7 @@ layout: default
 {% assign hasPosts = false %}
 
 {% if hasFeatured == true %}
+	{% assign hasFeatured = false %}
 	{% for item in site[page.collection] %}
 		{% if item.layout != "category" %}
 			{% assign hasPosts = true %}
@@ -20,9 +21,9 @@ layout: default
 	<!-- Show Featured Articles -->
 {% endif %}
 
-{% if hasFeatured == true %}
+{% if hasPosts == true %}
 	<h2>Latest {{ page.heading }}</h2>
 	<!-- Show Latest Articles -->
 {% else %}
-	<h2>There are no {{ page.heading | downcase }} to show!</h2>
+	<h2>There are no {{ page.heading | downcase }} {{ page.heading }} to show!</h2>
 {% endif %}
