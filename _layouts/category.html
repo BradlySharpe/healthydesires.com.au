@@ -1,4 +1,7 @@
 ---
 layout: default
 ---
-{{ page.collection }}
+{{ page.collection }}<br />
+{% for recipe in page.collection %}
+	{{ recipe.title }}
+{% endfor %}
