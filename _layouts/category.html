@@ -3,7 +3,7 @@ layout: default
 ---
 {% assign hasFeatured = page.showFeatured %}
 {% assign hasPosts = false %}
-
+<h2>Latest {{ page.heading }}</h2>
 {% if hasFeatured == true %}
 	{% assign hasFeatured = false %}
 	{% for item in site[page.collection] %}
@@ -21,7 +21,7 @@ layout: default
 {% else %}
 	no featured 
 {% endif %}
-
+<h2>Latest {{ page.heading }}</h2>
 {% if hasPosts == true %}
 	has posts
 {% else %}
@@ -32,7 +32,7 @@ layout: default
 	<h2>Featured {{ page.heading }}</h2>
 	<!-- Show Featured Articles -->
 {% endif %}
-
+<h2>Latest {{ page.heading }}</h2>
 {% if hasPosts == true %}
 	<h2>Latest {{ page.heading }}</h2>
 	<!-- Show Latest Articles -->
