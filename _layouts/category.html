@@ -3,5 +3,5 @@ layout: default
 ---
 {{ page.collection }}<br />
 {% for item in site[page.collection] %}
-	{{ item.title }}
+	{{ item.title }} - {{ page.layout }}<br />
 {% endfor %}
