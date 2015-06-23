@@ -4,7 +4,7 @@ layout: default
 {% if page.collection %}
 
 	{% assign hasFeatured = false %}
-	{%if page.showFeatured != nil and page.showFeatured == true %}
+	{%if page.showFeatured and page.showFeatured == true %}
 		{% assign hasFeatured = true %}
 	{% endif %}
 	{% assign hasPosts = false %}
@@ -26,7 +26,7 @@ layout: default
 	{% else %}
 		no featured 
 	{% endif %}
-	
+
 	{% if hasPosts == true %}
 		has posts
 	{% else %}
