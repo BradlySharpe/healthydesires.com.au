@@ -1,5 +1,8 @@
 ---
 layout: category
-title: "Something Else"
+title: Recipes
 permalink: /recipes/
+collection: recipes
+showFeatured: true
+heading: "Recipes"
 ---
