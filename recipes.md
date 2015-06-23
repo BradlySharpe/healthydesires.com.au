@@ -4,5 +4,5 @@ title: Recipes
 permalink: /recipes/
 collection: recipes
 showFeatured: true
-heading: "Recipes"
+heading: Recipes
 ---
