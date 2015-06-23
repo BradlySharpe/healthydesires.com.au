@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compress
 ---
 {% assign hasFeatured = false %}
 {%if page.showFeatured and page.showFeatured == true %}
@@ -21,25 +21,34 @@ layout: default
 	{% endif %}
 {% endif %}
 
-{% if hasFeatured == true %}
-	has featured
-{% else %}
-	no featured 
-{% endif %}
-
-{% if hasPosts == true %}
-	has posts
-{% else %}
-	no posts
-{% endif %}
-
-{% if hasFeatured == true %}
-	<h2>Featured {{ page.heading }}</h2>
-	<!-- Show Featured Articles -->
-{% endif %}
-{% if hasPosts == true %}
-	<h2>Latest {{ page.heading }}</h2>
-	<!-- Show Latest Articles -->
-{% else %}
-	<h2>No {{ page.heading | downcase }} to show!</h2>	
-{% endif %}
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  {% include head.html %}
+  </head>
+  <body>
+    <!-- Last autobuild at {{ site.time }} -->
+    {% include navigation.html %}
+    <div class="container">
+      <div class="row">
+      	<div class="content twelve columns">
+        {% if hasFeatured == true %}
+					<h1>Featured {{ page.heading }}</h1>
+					<!-- Show Featured Articles -->
+				{% endif %}
+				{% if hasPosts == true %}
+					{% if hasFeatured == true %}
+						<h2>Latest {{ page.heading }}</h2>
+					{% else %}
+						<h1>Latest {{ page.heading }}</h1>
+					{% endif %}
+					<!-- Show Latest Articles -->
+				{% else %}
+					<h2>No {{ page.heading | downcase }} to show!</h2>	
+				{% endif %}
+        </div>
+      </div>
+    </div>
+    {% include footer.html %}
+    {% include footerScripts.html %}
+  </body>
+</html>
