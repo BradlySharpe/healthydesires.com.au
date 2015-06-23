@@ -1,8 +1,8 @@
 ---
 layout: category
-title: Recipes
+title: Massage
 permalink: /recipes/
 collection: recipes
-showFeatured: true
-heading: "Recipe Goodies"
+showFeatured: false
+heading: "Massage News"
 ---
