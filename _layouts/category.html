@@ -2,6 +2,6 @@
 layout: default
 ---
 {{ page.collection }}<br />
-{% for recipe in page.collection %}
-	{{ recipe.title }}
+{% for item in site[page.collection] %}
+	{{ item.title }}
 {% endfor %}
