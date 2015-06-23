@@ -3,5 +3,7 @@ layout: default
 ---
 {{ page.collection }}<br />
 {% for item in site[page.collection] %}
-	{{ item.title }} - {{ item.layout }}<br />
+  {% if item.layout != "category" %}
+		{{ item.title }} - {{ item.layout }}<br />
+	{% endif %}
 {% endfor %}
