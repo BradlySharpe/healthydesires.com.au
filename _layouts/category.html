@@ -1,14 +1,13 @@
 ---
 layout: default
 ---
-{% if page.collection %}
+{% assign hasFeatured = false %}
+{%if page.showFeatured and page.showFeatured == true %}
+	{% assign hasFeatured = true %}
+{% endif %}
+{% assign hasPosts = false %}
 
-	{% assign hasFeatured = false %}
-	{%if page.showFeatured and page.showFeatured == true %}
-		{% assign hasFeatured = true %}
-	{% endif %}
-	{% assign hasPosts = false %}
-	
+{% if page.collection %}
 	{% if hasFeatured == true %}
 		{% assign hasFeatured = false %}
 		{% for item in site[page.collection] %}
@@ -20,27 +19,27 @@ layout: default
 			{% endif %}
 		{% endfor %}
 	{% endif %}
+{% endif %}
 
-	{% if hasFeatured == true %}
-		has featured
-	{% else %}
-		no featured 
-	{% endif %}
+{% if hasFeatured == true %}
+	has featured
+{% else %}
+	no featured 
+{% endif %}
 
-	{% if hasPosts == true %}
-		has posts
-	{% else %}
-		no posts
-	{% endif %}
+{% if hasPosts == true %}
+	has posts
+{% else %}
+	no posts
+{% endif %}
 
-	{% if hasFeatured == true %}
-		<h2>Featured {{ page.heading }}</h2>
-		<!-- Show Featured Articles -->
-	{% endif %}
-	{% if hasPosts == true %}
-		<h2>Latest {{ page.heading }}</h2>
-		<!-- Show Latest Articles -->
-	{% else %}
-		<h2>No {{ page.heading | downcase }} to show!</h2>	
-	{% endif %}
+{% if hasFeatured == true %}
+	<h2>Featured {{ page.heading }}</h2>
+	<!-- Show Featured Articles -->
+{% endif %}
+{% if hasPosts == true %}
+	<h2>Latest {{ page.heading }}</h2>
+	<!-- Show Latest Articles -->
+{% else %}
+	<h2>No {{ page.heading | downcase }} to show!</h2>	
 {% endif %}
