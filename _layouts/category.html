@@ -12,10 +12,17 @@ layout: compress
 		{% assign hasFeatured = false %}
 		{% for item in site[page.collection] %}
 			{% if item.layout != "category" %}
-				{% assign hasPosts = true %}
 				{%if item.featured != nil and item.featured == true %}
 					{% assign hasFeatured = true %}
+				{% else %}
+					{% assign hasPosts = true %}
 				{% endif %}
+			{% endif %}
+		{% endfor %}
+	{% else %}
+		{% for item in site[page.collection] %}
+			{% if item.layout != "category" %}
+				{% assign hasPosts = true %}
 			{% endif %}
 		{% endfor %}
 	{% endif %}
@@ -34,6 +41,11 @@ layout: compress
         {% if hasFeatured == true %}
 					<h1>Featured {{ page.heading }}</h1>
 					<!-- Show Featured Articles -->
+					{% for item in site[page.collection] %}
+						{% if item.layout != "category" and item.featured == true %}
+								<strong>{{ item.title }}</strong><br />
+						{% endif %}
+					{% endfor %}
 				{% endif %}
 				{% if hasPosts == true %}
 					{% if hasFeatured == true %}
@@ -42,6 +54,11 @@ layout: compress
 						<h1>Latest {{ page.heading }}</h1>
 					{% endif %}
 					<!-- Show Latest Articles -->
+					{% for item in site[page.collection] %}
+						{% if item.layout != "category" and (!item.featured or item.featured != true) %}
+								<strong>{{ item.title }}</strong><br />
+						{% endif %}
+					{% endfor %}
 				{% else %}
 					<h2>No {{ page.heading | downcase }} to show!</h2>	
 				{% endif %}
