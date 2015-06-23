@@ -1,5 +1,41 @@
 ---
 layout: default
 ---
-Title: {{ page.title }} <br />
-Permalink: {{page.permalink}}
+{% if page.collection %}
+	{% assign hasFeatured = page.showFeatured %}
+	{% assign hasPosts = false %}
+	
+	{% if hasFeatured == true %}
+		{% assign hasFeatured = false %}
+		{% for item in site[page.collection] %}
+			{% if item.layout != "category" %}
+				{% assign hasPosts = true %}
+				{%if item.featured != nil and item.featured == true %}
+					{% assign hasFeatured = true %}
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+
+	{% if hasFeatured == true %}
+		has featured
+	{% else %}
+		no featured 
+	{% endif %}
+	{% if hasPosts == true %}
+		has posts
+	{% else %}
+		no posts
+	{% endif %}
+
+	{% if hasFeatured == true %}
+		<h2>Featured {{ page.heading }}</h2>
+		<!-- Show Featured Articles -->
+	{% endif %}
+	{% if hasPosts == true %}
+		<h2>Latest {{ page.heading }}</h2>
+		<!-- Show Latest Articles -->
+	{% else %}
+		<h2>No {{ page.heading | downcase }} to show!</h2>	
+	{% endif %}
+{% endif %}
