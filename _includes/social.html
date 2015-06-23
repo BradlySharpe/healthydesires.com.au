@@ -21,3 +21,5 @@
 {% elsif site.business.logo and site.business.logo != "" %}
 <meta name="twitter:image" content="{{ site.business.logo | prepend: site.baseurl | prepend: site.url }}" />
 {% endif %}
+
+<meta name="test" content="{{ page.url | slice: 1, 1 }}" />
