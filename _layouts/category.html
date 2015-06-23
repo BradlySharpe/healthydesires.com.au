@@ -1,9 +1,28 @@
 ---
 layout: default
 ---
-{{ page.collection }}<br />
-{% for item in site[page.collection] %}
-  {% if item.layout != "category" %}
-		{{ item.title }} - {{ item.layout }}<br />
-	{% endif %}
-{% endfor %}
+{% assign hasFeatured = page.showFeatured %}
+{% assign hasPosts = false %}
+
+{% if hasFeatured == true %}
+	{% for item in site[page.collection] %}
+		{% if item.layout != "category" %}
+			{% assign hasPosts = true %}
+			{%if item.featured != nil and item.featured == true %}
+				{% assign hasFeatured = true %}
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+{% endif %}
+
+{% if hasFeatured == true %}
+	<h2>Featured {{ page.heading }}</h2>
+	<!-- Show Featured Articles -->
+{% endif %}
+
+{% if hasFeatured == true %}
+	<h2>Latest {{ page.heading }}</h2>
+	<!-- Show Latest Articles -->
+{% else %}
+	<h2>There are no {{ page.heading | downcase }} to show!</h2>
+{% endif %}
