@@ -24,4 +24,4 @@
 
 {% assign test = page.url %}
 {% assign test = test | slice: 0 %}
-<meta name="test" content="{{ page.url | split:'/' }}" />
+<meta name="test" content="{{ page.url | split:'/' | join: '/' }}" />
