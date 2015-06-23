@@ -1,8 +1,5 @@
 ---
 layout: category
-title: Massage
+title: "Something Else"
 permalink: /recipes/
-collection: massage
-showFeatured: false
-heading: "Massage News"
 ---
