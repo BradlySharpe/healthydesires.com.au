@@ -7,18 +7,16 @@ layout: compress
   </head>
   <body>
     <!-- Last autobuild at {{ site.time }} -->
-    <div class="page">
-      {% include snippets/navigation.html %}
-      <div class="container">
-        <div class="row">
-        	<div class="content twelve columns">
-            <h1 class="title">{% if page.title and page.title != "" %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
-            {{ content }}
-          </div>
+    {% include snippets/navigation.html %}
+    <div class="container">
+      <div class="row">
+      	<div class="content twelve columns">
+          <h1 class="title">{% if page.title and page.title != "" %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+          {{ content }}
         </div>
       </div>
-      {% include snippets/footer.html %}
-      {% include snippets/footerScripts.html %}
     </div>
+    {% include snippets/footer.html %}
+    {% include snippets/footerScripts.html %}
   </body>
 </html>
