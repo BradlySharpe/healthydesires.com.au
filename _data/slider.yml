@@ -31,6 +31,14 @@ home:
     - 
       id: snickers-cheezecake
       alt: "snickers cheezecake"
+      info:
+        show: true
+        heading: "Snickers Cheezecake"
+        text: "Something about the image"
+        button:
+          show: true
+          url: "/recipes/snickers-cheezecake"
+          text: "Get the Recipe!"
 old: 
   name: 'old'
   sprite: false
