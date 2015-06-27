@@ -7,7 +7,7 @@ layout: compress
 {% endif %}
 {% assign hasPosts = false %}
 
-{% assign posts = site[page.collection] %}
+{% assign posts = site[page.collection] | sort: 'date' %}
 
 
 {% if page.collection %}
