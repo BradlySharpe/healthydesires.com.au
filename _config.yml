@@ -21,6 +21,9 @@ collections:
   store:
     output: true
     permalink: /store/:path/
+  blog:
+    output: true
+    permalink: /blog/:path/
 
 
 # URL Settings
