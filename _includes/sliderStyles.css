@@ -1,14 +1,13 @@
 <style type="text/css">
   {% assign prefix = include.prefix %}
   {% assign slider = include.slider %}
-  {% assign counter = 1 %}
+
   {% for slide in slider.slides %}
-    {% if counter == slider.slides.size %}
+    {% if forloop.last %}
     .slider.{{ slider.name }}Slider #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child(1)
     {% else %}
-    .slider.{{ slider.name }}Slider #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ counter | plus:1 }}),
+    .slider.{{ slider.name }}Slider #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ forloop.index | plus:1 }}),
     {% endif %}
-    {% assign counter=counter | plus:1 %} 
   {% endfor %}
   {
     background: url('/images/next.png') no-repeat;
@@ -17,14 +16,12 @@
     display: block;
   }
 
-  {% assign counter = 1 %}
   {% for slide in slider.slides %}
-    {% if counter == 1 %}
+    {% if forloop.first %}
     .slider.{{ slider.name }}Slider #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ slider.slides.size }}),
     {% else %}
-    .slider.{{ slider.name }}Slider #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ counter | minus:1 }}){%if counter < (slider.slides.size | minus:1) %},{% endif %}
+    .slider.{{ slider.name }}Slider #{{ slide.id | prepend: prefix }}:checked ~ .controls label:nth-child({{ forloop.index | minus:1 }}){% unless forloop.index == (forloop.length | minus:1) %},{% endunless %}
     {% endif %}
-    {% assign counter=counter | plus:1 %} 
   {% endfor %}
   {
     background: url('/images/prev.png') no-repeat;
@@ -33,20 +30,16 @@
     display: block;
   }
 
-  {% assign counter = 1 %}
   {% for slide in slider.slides %}
-    .slider.{{ slider.name }}Slider #{{ slide.id | prepend: prefix }}:checked ~ .active label:nth-child({{ counter }}){%if counter < slider.slides.size %},{% endif %}
-    {% assign counter=counter | plus:1 %} 
+    .slider.{{ slider.name }}Slider #{{ slide.id | prepend: prefix }}:checked ~ .active label:nth-child({{ forloop.index }}){% unless forloop.last %},{% endunless %}
   {% endfor %}
   {
     background: #333;
     border-color: #333 !important;
   }
 
-  {% assign counter = 1 %}
   {% for slide in slider.slides %}
-    .slider.{{ slider.name }}Slider #{{ slide.id | prepend: prefix }}:checked ~ .slides .slide:nth-child({{ counter }}) .info{%if counter < slider.slides.size %},{% endif %}
-    {% assign counter=counter | plus:1 %} 
+    .slider.{{ slider.name }}Slider #{{ slide.id | prepend: prefix }}:checked ~ .slides .slide:nth-child({{ forloop.index }}) .info{% unless forloop.last %},{% endunless %} 
   {% endfor %}
   {
     opacity: 1;
@@ -60,10 +53,8 @@
     }
   {% endif %}
 
-  {% assign counter = 0 %}
   {% for slide in slider.slides %}
-    .slider.{{ slider.name }}Slider #{{ slide.id | prepend: prefix }}:checked ~ .slides .inner { margin-left: -{{ counter }}00% }
-    {% assign counter=counter | plus:1 %} 
+    .slider.{{ slider.name }}Slider #{{ slide.id | prepend: prefix }}:checked ~ .slides .inner { margin-left: {% if forloop.first %}0{% else %}-{{ forloop.index | minus: 1 }}00{% endif %}% } 
   {% endfor %}
 
 
