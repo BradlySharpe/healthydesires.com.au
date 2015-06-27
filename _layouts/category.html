@@ -55,7 +55,7 @@ layout: compress
 					{% endif %}
 					<!-- Show Latest Articles -->
 					{% for item in site[page.collection] %}
-						{% if item.layout != "category" and (!item.featured or item.featured != true) %}
+						{% if item.layout != "category" and (item.featured == nil or item.featured != true) %}
 								<strong>{{ item.title }}</strong><br />
 						{% endif %}
 					{% endfor %}
