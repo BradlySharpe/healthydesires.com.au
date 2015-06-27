@@ -55,7 +55,7 @@ layout: compress
 					{% endif %}
 					<!-- Show Latest Articles -->
 					{% for item in site[page.collection] %}
-						{% if item.layout != "category" and (item.featured == blank or item.featured != true) %}
+						{% if item.layout != "category" and item.featured != true %}
 								<strong>{{ item.title }} - {{ item.layout }} - {{ item.featured }}</strong><br />
 						{% endif %}
 						<strong>{{ item.title }} - {{ item.layout }} - {{ item.featured }}</strong><br />
