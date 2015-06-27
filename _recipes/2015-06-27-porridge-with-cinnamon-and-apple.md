@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Porridge with cinnamon and apple"
+title:  "Porridge with Cinnamon and Apple"
 date:   2015-06-27 11:26:00
 categories: food
 ---
