@@ -7,13 +7,10 @@ layout: compress
 {% endif %}
 {% assign hasPosts = false %}
 
-{% assign posts = site[page.collection] | sort: 'date' %}
-
-
 {% if page.collection %}
 	{% if hasFeatured == true %}
 		{% assign hasFeatured = false %}
-		{% for item in posts %}
+		{% for item in site[page.collection] %}
 			{% if item.layout != "category" %}
 				{%if item.featured != nil and item.featured == true %}
 					{% assign hasFeatured = true %}
@@ -23,7 +20,7 @@ layout: compress
 			{% endif %}
 		{% endfor %}
 	{% else %}
-		{% for item in posts %}
+		{% for item in site[page.collection] %}
 			{% if item.layout != "category" %}
 				{% assign hasPosts = true %}
 			{% endif %}
@@ -44,7 +41,7 @@ layout: compress
         {% if hasFeatured == true %}
 					<h1>Featured {{ page.heading }}</h1>
 					<!-- Show Featured Articles -->
-					{% for item in posts %}
+					{% for item in site[page.collection] %}
 						{% if item.layout != "category" and item.featured == true %}
 								<strong>{{ item.title }}</strong><br />
 						{% endif %}
@@ -57,9 +54,9 @@ layout: compress
 						<h1>Latest {{ page.heading }}</h1>
 					{% endif %}
 					<!-- Show Latest Articles -->
-					{% for item in posts %}
+					{% for item in site[page.collection] %}
 						{% if item.layout != "category" and (item.featured == blank or item.featured != true) %}
-								<strong>{{ item.title }}</strong><br />
+								<strong>{{ item.title }} - {{ item.layout }} - {{ item.featured }}</strong><br />
 						{% endif %}
 					{% endfor %}
 				{% else %}
