@@ -1,12 +1,10 @@
 <ol class="breadcrumbs">
-{% assign first = 1 %}
 {% for p in page.ancestors %}
-	<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb" {% if first == 0 %}itemprop="child"{% endif %}>
+	<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb" {% unless forloop.first %}itemprop="child"{% endunless %}>
 		<a href="{{ p.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" itemprop="url">
 			<span itemprop="title">{{ p.title }}</span>
 		</a>
 	</li>
-	{% assign first = 0 %}
 {% endfor %}
 	<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb" itemprop="child" class="active">
 		<a href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" itemprop="url">
