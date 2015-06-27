@@ -3,6 +3,7 @@ layout: post
 title:  "Example 1 Week Eating Plan"
 date:   2015-06-27 11:31:00
 categories: food
+featured: true
 ---
 Please note, this is not a personalised plan, this is an example of something similar to what I do on a weekly basis. Modify this plan to suit your needs, to suit your dietary needs, allergies etc and seek advice from your GP. If you have set meals written down to prepare each week, you will be more likely to stick to it. The key is to be prepared, to avoid falling into the trap of bad food cravings. If you have any questions, or would like some advice please send me an email and I will get back to you as soon as I can.
 
