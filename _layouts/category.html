@@ -58,6 +58,7 @@ layout: compress
 						{% if item.layout != "category" and (item.featured == blank or item.featured != true) %}
 								<strong>{{ item.title }} - {{ item.layout }} - {{ item.featured }}</strong><br />
 						{% endif %}
+						<strong>{{ item.title }} - {{ item.layout }} - {{ item.featured }}</strong><br />
 					{% endfor %}
 				{% else %}
 					<h1>No {{ page.heading | downcase }} to show :(</h1>
