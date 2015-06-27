@@ -3,10 +3,8 @@ layout: compress
 ---
 {
 	"entries" : [
-	{% assign firstPost = 1 %}
 	{% for post in site.posts %}
-	  {% if firstPost == 0 %}, {% endif %}{ "id": "{{ post.id | escape }}", "title": "{{ post.title | escape }}", "categories": "{{ post.categories | first | capitalize_category | escape }}", "date": "{{ post.date | escape }}", "body": "{{ post.content | strip_html | escape }}", "excerpt": "{{ post.excerpt | strip_html | escape }}"}
-	  {% assign firstPost = 0 %}
+	  { "id": "{{ post.id | escape }}", "title": "{{ post.title | escape }}", "categories": "{{ post.categories | first | capitalize_category | escape }}", "date": "{{ post.date | date_to_rfc822 }}", "body": "{{ post.content | strip_html | escape }}", "excerpt": "{{ post.excerpt | strip_html | escape }}"}{% unless forloop.last %}, {% endunless %}
 	{% endfor %}
 	]
 }
