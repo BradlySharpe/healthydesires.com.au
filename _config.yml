@@ -38,7 +38,7 @@ assets_url: ""
 founder:
   firstName: "Raya"
   lastName: "Rantall"
-  link: "http://healthydesires.com.au"
+  link: "http://healthydesires.com.au/"
 business:
   state: "VIC"
   postCode: "3280"
@@ -46,7 +46,7 @@ business:
   address: "3 Pappas Drive"
   internationalNumber: ""
   localNumber: ""
-  logo: "images/healthy-desires-logo.png"
+  logo: "/images/healthy-desires-logo.png"
 social:
   facebook: ""
   googlePlus: ""
